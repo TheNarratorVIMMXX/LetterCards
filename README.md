@@ -338,8 +338,8 @@ Simply download and play! This game is distributed as a standalone executable th
 
 ### System Requirements
 - **OS**: Windows 10/11, Linux (Ubuntu 18.04+), or macOS 10.14+
-- **RAM**: 50MB minimum
-- **Storage**: ~2MB free space
+- **RAM**: 20MB minimum
+- **Storage**: ~3MB free space
 - **Display**: Terminal/Console window
 - **No Dependencies**: All libraries are statically linked
 
