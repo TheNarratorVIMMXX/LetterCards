@@ -311,10 +311,10 @@ La interfaz del juego está actualmente en **español**. Los mensajes de error, 
 
 ### ¿Listo para Jugar?
 
-✅ **Sin complicaciones de instalación**
-✅ **Sin dependencias que descargar**
-✅ **Sin configuración necesaria**
-✅ **¡Solo descarga y juega!**
+- ✅ **Sin complicaciones de instalación**
+- ✅ **Sin dependencias que descargar**
+- ✅ **Sin configuración necesaria**
+= ✅ **¡Solo descarga y juega!**
 
 Descarga la última versión desde la sección de [Releases](../../releases) ¡y comienza a desafiar tu memoria hoy!
 
