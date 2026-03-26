@@ -320,9 +320,9 @@ Descarga la última versión desde la sección de [Releases](../../releases) ¡y
 
 ## 📧 Contacto y Soporte
 
-**Desarrollador:** Carlos Gabriel Magallanes López
-**Correo electrónico:** cgmagallanes23@gmail.com
-**Escuela:** Centro de Bachillerato Tecnológico Industrial y de Servicios No. 128
+- **Desarrollador:** Carlos Gabriel Magallanes López
+- **Correo electrónico:** cgmagallanes23@gmail.com
+- **Escuela:** Centro de Bachillerato Tecnológico Industrial y de Servicios No. 128
 
 ¿Encontraste un error? ¿Tienes sugerencias? ¿Quieres reportar tu puntuación más alta? ¡No dudes en escribir!
 
