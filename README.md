@@ -6,7 +6,7 @@ Un juego de memoria por consola desarrollado en C++ con soporte multiplataforma.
 
 - **Desarrollador:** Magallanes López Carlos Gabriel
 - **Correo electrónico:** cgmagallanes23@gmail.com
-- **Desarrollo original:** 7 de junio de 2025
+- **Desarrollo:** 7 de junio de 2025
 
 ## 🎮 Descripción del Juego
 
