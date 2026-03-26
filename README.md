@@ -1,65 +1,64 @@
-# 🃏 Memory Game (Memorama) - Classic Card Matching
+# 🃏 Memorama de Letras - Juego Clásico de Parejas
 
-A console-based memory card matching game (Memorama) developed in C++ with cross-platform support. This classic two-player game challenges players to find matching pairs of letters on a 6x6 grid while tracking time, moves, and errors.
+Un juego de memoria por consola desarrollado en C++ con soporte multiplataforma. Este clásico juego para dos jugadores desafía a los participantes a encontrar parejas de letras en una cuadrícula de 6x6, registrando tiempo, movimientos y errores.
 
-## 👨‍🎓 Developer Information
+## 👨‍🎓 Información del Desarrollador
 
-**Developer:** Magallanes López Carlos Gabriel  
-**Email:** cgmagallanes23@gmail.com  
-**Original Development:** November 7, 2025  
-**Last Modified:** December 6, 2025
+- **Desarrollador:** Magallanes López Carlos Gabriel
+- **Correo electrónico:** cgmagallanes23@gmail.com
+- **Desarrollo original:** 7 de junio de 2025
 
-## 🎮 Game Overview
+## 🎮 Descripción del Juego
 
-Memory Game is a terminal-based implementation of the classic Memorama card matching game. Two players take turns flipping cards to find matching pairs of letters. The game features a 6x6 grid with 18 unique letter pairs (36 cards total), complete with move tracking, error counting, and game duration timing.
+Memorama de Letras es una implementación en terminal del clásico juego de memoria Memorama. Dos jugadores se turnan para voltear cartas y encontrar parejas de letras. El juego cuenta con una cuadrícula de 6x6 con 18 parejas únicas de letras (36 cartas en total), con seguimiento de movimientos, conteo de errores y cronómetro de partida.
 
-### Key Features
-- **Two-Player Mode**: Competitive gameplay for two players
-- **6x6 Grid**: 36 cards with 18 matching pairs (A-R)
-- **Real-Time Scoring**: Track points, moves, and errors
-- **Cross-Platform**: Works on Windows, Linux, and macOS
-- **Colored Console**: Enhanced visual experience with colored text
-- **Game Statistics**: Time tracking, move counter, and error analysis
-- **Input Validation**: Robust error handling for user input
+### Características Principales
+- **Modo Dos Jugadores**: Juego competitivo para dos personas
+- **Cuadrícula 6x6**: 36 cartas con 18 parejas (A-R)
+- **Puntuación en Tiempo Real**: Seguimiento de puntos, movimientos y errores
+- **Multiplataforma**: Funciona en Windows, Linux y macOS
+- **Consola con Color**: Experiencia visual mejorada con texto en color
+- **Estadísticas de Juego**: Cronómetro, contador de movimientos y análisis de errores
+- **Validación de Entrada**: Manejo robusto de errores en la entrada del usuario
 
-## 🎯 How to Play
+## 🎯 Cómo Jugar
 
-### Game Setup
-1. **Launch the game** - Run the executable
-2. **Enter player names** - Both players input their names
-3. **Wait for loading** - Brief loading animation
-4. **Start playing** - Cards are shuffled and hidden as 'X'
+### Configuración del Juego
+1. **Inicia el juego** - Haz doble clic en el archivo
+2. **Ingresa los nombres** - Ambos jugadores escriben su nombre
+3. **Espera la carga** - Breve animación de carga
+4. **Comienza a jugar** - Las cartas se mezclan y se ocultan como 'X'
 
-### Gameplay Rules
-- Players take turns selecting two cards by entering row and column coordinates
-- **Match Found**: Player scores a point and continues their turn
-- **No Match**: Cards flip back, turn switches to other player
-- **Winning**: Player with most pairs when all 18 pairs are found wins
-- Game tracks total time, moves, and errors
+### Reglas del Juego
+- **Turnos**: Los jugadores se turnan eligiendo dos cartas mediante coordenadas de fila y columna
+- **Pareja encontrada**: El jugador anota un punto y continúa su turno
+- **Sin pareja**: Las cartas se voltean de nuevo y el turno pasa al otro jugador
+- **Ganador**: El jugador con más parejas al encontrar las 18 gana
+- **Datos Extra**: El juego registra el tiempo total, movimientos y errores
 
-### Game Controls
-| Input | Description |
-|-------|-------------|
-| **Row (0-5)** | Enter the row number of the card |
-| **Column (0-5)** | Enter the column number of the card |
-| **Numbers Only** | Input validation ensures correct data type |
+### Controles del Juego
+| Entrada | Descripción |
+|---------|-------------|
+| **Fila (0-5)** | Ingresa el número de fila de la carta |
+| **Columna (0-5)** | Ingresa el número de columna de la carta |
+| **Solo Números** | La validación asegura el tipo de dato correcto |
 
-### Card Selection Process
-1. **First Card**: 
-   - Enter row coordinate (0-5)
-   - Enter column coordinate (0-5)
-   - Card is revealed on the board
-2. **Second Card**:
-   - Enter row coordinate (0-5)
-   - Enter column coordinate (0-5)
-   - Card is revealed for comparison
-3. **Matching Logic**:
-   - If cards match → Point awarded, cards stay revealed
-   - If no match → Cards flip back to 'X', turn switches
+### Proceso de Selección de Cartas
+1. **Primera Carta**:
+   - Ingresa la coordenada de fila (0-5)
+   - Ingresa la coordenada de columna (0-5)
+   - La carta se revela en el tablero
+2. **Segunda Carta**:
+   - Ingresa la coordenada de fila (0-5)
+   - Ingresa la coordenada de columna (0-5)
+   - La carta se revela para comparación
+3. **Lógica de Coincidencia**:
+   - Si las cartas coinciden → Se otorga un punto, las cartas permanecen visibles
+   - Si no coinciden → Las cartas vuelven a 'X', el turno cambia
 
-## 📊 Game Board Layout
+## 📊 Diseño del Tablero
 ```
-Grid Coordinates:
+Coordenadas de la Cuadrícula:
         0 1 2 3 4 5
     0   X X X X X X
     1   X X X X X X
@@ -68,7 +67,7 @@ Grid Coordinates:
     4   X X X X X X
     5   X X X X X X
 
-After revealing some cards:
+Después de revelar algunas cartas:
         0 1 2 3 4 5
     0   A X B X C X
     1   X D X D X E
@@ -78,297 +77,264 @@ After revealing some cards:
     5   X X X X X X
 ```
 
-## 🏆 Scoring System
+## 🏆 Sistema de Puntuación
 
-### Point Allocation
-- **+1 Point**: For each matching pair found
-- **No Penalty**: Wrong guesses don't deduct points
-- **Turn Continuation**: Finding a match keeps your turn active
+### Asignación de Puntos
+- **+1 Punto**: Por cada pareja encontrada
+- **Sin Penalización**: Los intentos fallidos no restan puntos
+- **Continuación del Turno**: Encontrar una pareja mantiene tu turno activo
 
-### Statistics Tracked
-- **Individual Scores**: Each player's total pairs found
-- **Total Moves**: Number of card pair selections
-- **Errors**: Failed match attempts + invalid selections
-- **Game Duration**: Total time in minutes and seconds
-- **Winner Declaration**: Highest score or tie announcement
+### Estadísticas Registradas
+- **Puntuaciones Individuales**: Total de parejas encontradas por cada jugador
+- **Movimientos Totales**: Número de selecciones de pares de cartas
+- **Errores**: Intentos fallidos + selecciones inválidas
+- **Duración de la Partida**: Tiempo total en minutos y segundos
+- **Declaración del Ganador**: Anuncio del puntaje más alto o empate
 
-### End Game Results Display
+### Pantalla de Resultados Finales
 ```
 ******************************************************************
-*                      Game Finished!                           *
+*                    ¡Juego Terminado!                           *
 ******************************************************************
-*         Player 1: 10 points                                   *
-*         Player 2: 8 points                                    *
-*         Total Moves: 25                                       *
-*         Errors: 7                                             *
-*         Time: 5 min, 32 sec                                   *
+*         Jugador 1: 10 puntos                                   *
+*         Jugador 2: 8 puntos                                    *
+*         Movimientos Totales: 25                                *
+*         Errores: 7                                             *
+*         Tiempo: 5 min, 32 seg                                  *
 ******************************************************************
 ```
 
-## 💻 Technical Implementation
+## 💻 Implementación Técnica
 
-### Core Architecture
+### Arquitectura Principal
 ```cpp
-Main Components:
-1. Card Grid System (6x6 matrix)
-2. Input Validation Engine
-3. Turn Management System
-4. Scoring & Statistics Tracker
-5. Cross-Platform Console Control
-6. Timer & Chronometer
-7. Random Shuffling Algorithm
+Componentes Principales:
+1. Sistema de Cuadrícula de Cartas (matriz 6x6)
+2. Motor de Validación de Entrada
+3. Sistema de Gestión de Turnos
+4. Rastreador de Puntuación y Estadísticas
+5. Control de Consola Multiplataforma
+6. Cronómetro y Temporizador
+7. Algoritmo de Mezcla Aleatoria
 ```
 
-### Cross-Platform Support
+### Soporte Multiplataforma
 
-#### Supported Operating Systems
-- **Windows**: Native console API (Windows.h)
-- **Linux**: POSIX terminal control
-- **macOS**: POSIX terminal control
+#### Sistemas Operativos Compatibles
+- **Windows**: API de consola nativa (Windows.h)
+- **Linux**: Control de terminal POSIX
+- **macOS**: Control de terminal POSIX
 
-#### Platform-Specific Features
+#### Funcionalidades por Plataforma
 ```cpp
-// Screen clearing
+// Limpiar pantalla
 #ifdef _WIN32
     system("cls");          // Windows
 #else
     system("clear");        // POSIX
 #endif
 
-// Console colors
+// Colores de consola
 Windows: SetConsoleTextAttribute()
-POSIX:   ANSI escape codes (\033[code)
+POSIX:   Códigos de escape ANSI (\033[codigo])
 
-// Audio feedback
-Windows: Beep(frequency, duration)
-POSIX:   Bell character (\a)
+// Retroalimentación de audio
+Windows: Beep(frecuencia, duracion)
+POSIX:   Carácter de campana (\a)
 ```
 
-### Data Structures
+### Estructuras de Datos
 ```cpp
-// Letter pairs storage
-std::vector<std::string> letters(18);    // Unique letters A-R
-std::vector<std::string> pairs(36);      // 18 pairs doubled
+// Almacenamiento de pares de letras
+std::vector<std::string> letters(18);    // Letras únicas A-R
+std::vector<std::string> pairs(36);      // 18 pares duplicados
 
-// Game board matrices
-std::vector<std::vector<std::string>> board(6x6);         // Actual cards
-std::vector<std::vector<std::string>> visibleCards(6x6);  // Player view
+// Matrices del tablero de juego
+std::vector<std::vector<std::string>> board(6x6);         // Cartas reales
+std::vector<std::vector<std::string>> visibleCards(6x6);  // Vista del jugador
 
-// Player information
-std::vector<std::string> playerNames(2);  // Two player names
+// Información de jugadores
+std::vector<std::string> playerNames(2);  // Nombres de los dos jugadores
 ```
 
-### Key Algorithms
+### Algoritmos Clave
 
-#### Card Shuffling
+#### Mezcla de Cartas
 ```cpp
-Fisher-Yates Shuffle Algorithm:
-- Generate 36 random positions
-- Swap cards to randomize placement
-- Ensures fair distribution
+Algoritmo de Mezcla Fisher-Yates:
+- Generar 36 posiciones aleatorias
+- Intercambiar cartas para aleatorizar su posición
+- Garantiza una distribución justa
 ```
 
-#### Match Detection
+#### Detección de Coincidencias
 ```cpp
-Comparison Logic:
-- Reveal first card at [row1][col1]
-- Reveal second card at [row2][col2]
-- Compare board[row1][col1] == board[row2][col2]
-- Update game state based on result
+Lógica de Comparación:
+- Revelar primera carta en [fila1][col1]
+- Revelar segunda carta en [fila2][col2]
+- Comparar tablero[fila1][col1] == tablero[fila2][col2]
+- Actualizar el estado del juego según el resultado
 ```
 
-#### Input Validation
+#### Validación de Entrada
 ```cpp
-Multi-Layer Validation:
-1. Type checking (integer only)
-2. Range validation (0-5)
-3. Card state verification (not already revealed)
-4. Duplicate selection prevention (same card twice)
+Validación en Múltiples Capas:
+1. Verificación de tipo (solo enteros)
+2. Validación de rango (0-5)
+3. Verificación del estado de la carta (no revelada aún)
+4. Prevención de selección duplicada (misma carta dos veces)
 ```
 
-## 🎨 Visual Design
+## 🎨 Diseño Visual
 
-### Console Color Scheme
-- **Primary Text**: Red (`colorCode: 4`)
-- **Game Board**: White background with colored text
-- **Error Messages**: Highlighted error boxes
-- **Success Messages**: Celebration boxes with beep sound
+### Esquema de Colores de la Consola
+- **Texto Principal**: Rojo (`colorCode: 4`)
+- **Tablero de Juego**: Fondo blanco con texto en color
+- **Mensajes de Error**: Cuadros de error resaltados
+- **Mensajes de Éxito**: Cuadros de celebración con sonido
 
-### ASCII Art Elements
-- **Title Screen**: Large "MEMORAMA" banner
-- **Victory Screen**: "FELICIDADES" (Congratulations)
-- **Tie Screen**: "EMPATE" (Tie)
-- **Error Boxes**: Bordered error notifications
+### Elementos en Arte ASCII
+- **Pantalla de Título**: Banner grande "MEMORAMA"
+- **Pantalla de Victoria**: "FELICIDADES"
+- **Pantalla de Empate**: "EMPATE"
+- **Cuadros de Error**: Notificaciones de error con borde
 
-## 📚 Learning Outcomes
+## 📚 Resultados de Aprendizaje
 
-### For Players
-✅ **Memory Training**: Enhance short-term memory skills  
-✅ **Pattern Recognition**: Identify and remember card positions  
-✅ **Strategic Thinking**: Decide when to take risks  
-✅ **Competitive Play**: Two-player engagement  
+### Para los Jugadores
+- ✅ **Entrenamiento de Memoria**: Mejora las habilidades de memoria a corto plazo
+- ✅ **Reconocimiento de Patrones**: Identificar y recordar posiciones de cartas
+- ✅ **Pensamiento Estratégico**: Decidir cuándo tomar riesgos
+- ✅ **Juego Competitivo**: Experiencia de dos jugadores
 
-### For Developers
-🎓 **C++ Fundamentals**
-- Vector and matrix manipulation
-- String handling and comparison
-- Function organization and modularity
-- Namespace usage and aliasing
+### Para Desarrolladores
+🎓 **Fundamentos de C++**
+- Manipulación de vectores y matrices
+- Manejo y comparación de cadenas
+- Organización de funciones y modularidad
+- Uso de namespaces y alias
 
-🎓 **Cross-Platform Development**
-- Conditional compilation (#ifdef)
-- Platform-specific APIs
-- POSIX vs Windows differences
-- Portable code design
+🎓 **Desarrollo Multiplataforma**
+- Compilación condicional (#ifdef)
+- APIs específicas de cada plataforma
+- Diferencias entre POSIX y Windows
+- Diseño de código portable
 
-🎓 **Input/Output Management**
-- Console input validation
-- Stream error handling (cin.fail())
-- Buffer clearing techniques
-- Formatted console output
+🎓 **Gestión de Entrada/Salida**
+- Validación de entrada por consola
+- Manejo de errores de flujo (cin.fail())
+- Técnicas de limpieza de búfer
+- Salida formateada por consola
 
-🎓 **Game Logic Implementation**
-- Turn-based systems
-- State management (revealed/hidden cards)
-- Win condition detection
-- Error recovery mechanisms
+🎓 **Implementación de Lógica de Juego**
+- Sistemas por turnos
+- Gestión de estado (cartas reveladas/ocultas)
+- Detección de condición de victoria
+- Mecanismos de recuperación de errores
 
-🎓 **Time & Threading**
-- Chrono library usage
-- Duration calculations
-- Thread sleep for delays
-- Real-time tracking
+🎓 **Tiempo y Subprocesos**
+- Uso de la biblioteca Chrono
+- Cálculos de duración
+- Pausas con hilos de ejecución
+- Seguimiento en tiempo real
 
-🎓 **Algorithm Design**
-- Random shuffling
-- Grid traversal
-- Coordinate mapping
-- Validation logic
+🎓 **Diseño de Algoritmos**
+- Mezcla aleatoria
+- Recorrido de cuadrículas
+- Mapeo de coordenadas
+- Lógica de validación
 
-## 🔧 Compilation & Execution
+## 🎮 Desglose de Características
 
-### Requirements
-- **C++ Compiler**: C++11 or later
-- **Operating System**: Windows, Linux, or macOS
-- **Terminal**: Console with color support (recommended)
+### Manejo de Errores
+- **Errores de Tipo**: Rechazo de entradas no enteras
+- **Errores de Rango**: Detección de coordenadas fuera de límites
+- **Errores de Lógica**: Prevención de seleccionar la misma carta
+- **Errores de Estado**: Validación de cartas ya reveladas
+- **Limpieza de Búfer**: Limpieza automática del flujo de entrada
 
-### Compilation Commands
-
-#### Windows (MinGW/MSVC)
-```bash
-g++ -std=c++11 memorama.cpp -o memorama.exe
-memorama.exe
+### Sistema de Validación
+```
+Flujo de Entrada:
+Entrada → Verificación de Tipo → Verificación de Rango → Verificación de Estado → Aceptar/Rechazar
+               ↓                        ↓                        ↓
+          Mensaje Error            Mensaje Error            Mensaje Error
 ```
 
-#### Linux/macOS (GCC/Clang)
-```bash
-g++ -std=c++11 memorama.cpp -o memorama
-./memorama
-```
+### Sistema de Cronómetro
+- **Inicio**: El cronómetro comienza en el primer movimiento
+- **Seguimiento**: Medición de duración en tiempo real
+- **Fin**: El cronómetro se detiene al encontrar la última pareja
+- **Visualización**: Convertido a minutos y segundos
 
-### Build Options
-```bash
-# With optimization
-g++ -std=c++11 -O2 memorama.cpp -o memorama
+## 🐛 Mensajes de Error
 
-# With debug symbols
-g++ -std=c++11 -g memorama.cpp -o memorama
+### Errores Comunes
+| Tipo de Error | Mensaje | Causa |
+|---------------|---------|-------|
+| **Error de Rango** | "Fuera de Rango (Numeros de 0-5)" | Entrada < 0 o > 5 |
+| **Error de Tipo** | "Entrada Invalida. Ingresa un Numero" | Entrada no entera |
+| **Error de Carta** | "Esa Carta ya fue descubierta" | Selección de carta revelada |
+| **Misma Carta** | "Ya elegiste esa Carta como Primera" | Selección duplicada |
+| **Nombre Vacío** | "El Nombre no puede estar Vacio" | Nombre de jugador en blanco |
 
-# With warnings enabled
-g++ -std=c++11 -Wall -Wextra memorama.cpp -o memorama
-```
+## 🌐 Nota sobre el Idioma
 
-## 🎮 Game Features Breakdown
+La interfaz del juego está actualmente en **español**. Los mensajes de error, indicaciones y pantallas de victoria se muestran en español, siendo ideal para jugadores hispanohablantes o personas que aprenden el idioma.
 
-### Error Handling
-- **Type Errors**: Non-integer input rejection
-- **Range Errors**: Out-of-bounds coordinate detection
-- **Logic Errors**: Same card selection prevention
-- **State Errors**: Already-revealed card validation
-- **Buffer Clearing**: Automatic input stream cleanup
+## 💡 Consejos de Estrategia
 
-### Validation System
-```
-Input Flow:
-User Input → Type Check → Range Check → State Check → Accept/Reject
-                ↓              ↓             ↓
-           Error Msg     Error Msg     Error Msg
-```
+### Para Mejores Resultados
+- **Mapeo Mental**: Crea un mapa mental de las cartas reveladas
+- **Memoria de Patrones**: Recuerda las posiciones de las letras, no solo las parejas
+- **Riesgo vs Recompensa**: A veces adivinar revela nueva información
+- **Observación**: Aprovecha los intentos fallidos del oponente como pistas
+- **Inicio del Juego**: Explora diferentes áreas del tablero
+- **Final del Juego**: Usa el conocimiento acumulado para ganar rápido
 
-### Timing System
-- **Start**: Chronometer begins at first move
-- **Tracking**: Real-time duration measurement
-- **End**: Timer stops when last pair is found
-- **Display**: Converted to minutes and seconds
+## 📥 Descarga y Juega
 
-## 🐛 Error Messages
+### ¡Inicio Rápido — Sin Instalación!
 
-### Common Errors
-| Error Type | Message | Cause |
-|------------|---------|-------|
-| **Range Error** | "Fuera de Rango (Numeros de 0-5)" | Input < 0 or > 5 |
-| **Type Error** | "Entrada Invalida. Ingresa un Numero" | Non-integer input |
-| **Card Error** | "Esa Carta ya fue descubierta" | Selecting revealed card |
-| **Same Card** | "Ya elegiste esa Carta como Primera" | Duplicate selection |
-| **Empty Name** | "El Nombre no puede estar Vacio" | Blank player name |
+¡Solo descarga y juega! Este juego se distribuye como un ejecutable independiente que corre directamente sin ningún proceso de instalación.
 
-## 🌐 Language Note
+1. **Descarga** el archivo ejecutable (`LetterCards.exe`)
+2. **Haz doble clic** para iniciar el juego
+3. **Comienza a jugar** de inmediato — ¡sin configuración necesaria!
 
-The game interface is currently in **Spanish**. Error messages, prompts, and victory screens display in Spanish, making it ideal for Spanish-speaking players or language learners.
+### Requisitos del Sistema
+- **SO**: Windows 10/11, Linux (Ubuntu 18.04+) o macOS 10.14+
+- **RAM**: Mínimo 20 MB
+- **Almacenamiento**: ~3 MB de espacio libre
+- **Pantalla**: Ventana de terminal/consola
+- **Sin Dependencias**: Todas las bibliotecas están enlazadas estáticamente
 
-## 💡 Strategy Tips
+### ¿Listo para Jugar?
 
-### For Best Results
-- **Mental Mapping**: Create a mental grid of revealed cards
-- **Pattern Memory**: Remember letter positions, not just matches
-- **Risk vs Reward**: Sometimes guessing reveals new information
-- **Observation**: Watch opponent's failed attempts for clues
-- **Early Game**: Explore different areas of the board
-- **Late Game**: Use accumulated knowledge for quick wins
+✅ **Sin complicaciones de instalación**
+✅ **Sin dependencias que descargar**
+✅ **Sin configuración necesaria**
+✅ **¡Solo descarga y juega!**
 
-## 📥 Download & Play
+Descarga la última versión desde la sección de [Releases](../../releases) ¡y comienza a desafiar tu memoria hoy!
 
-### Quick Start - No Installation Required!
+## 📧 Contacto y Soporte
 
-Simply download and play! This game is distributed as a standalone executable that runs directly without any installation process.
+**Desarrollador:** Carlos Gabriel Magallanes López
+**Correo electrónico:** cgmagallanes23@gmail.com
+**Escuela:** Centro de Bachillerato Tecnológico Industrial y de Servicios No. 128
 
-1. **Download** the executable file (`LetterCards.exe`)
-2. **Double-click** to launch the game
-3. **Start playing** immediately - no setup needed!
-
-### System Requirements
-- **OS**: Windows 10/11, Linux (Ubuntu 18.04+), or macOS 10.14+
-- **RAM**: 20MB minimum
-- **Storage**: ~3MB free space
-- **Display**: Terminal/Console window
-- **No Dependencies**: All libraries are statically linked
-
-### Ready to Play?
-
-✅ **No installation hassle**  
-✅ **No dependencies to download**  
-✅ **No configuration needed**  
-✅ **Just download and play!**
-
-Download the latest release from the [Releases](../../releases) section and start challenging your memory today!
-
-## 📧 Contact & Support
-
-**Developer:** Carlos Gabriel Magallanes López  
-**Email:** cgmagallanes23@gmail.com  
-**School:** Centro de Bachillerato Tecnológico Industrial y de Servicios No. 128
-
-Found a bug? Have suggestions? Want to report your high score? Feel free to reach out!
+¿Encontraste un error? ¿Tienes sugerencias? ¿Quieres reportar tu puntuación más alta? ¡No dudes en escribir!
 
 ---
 
-### 🃏 Test your memory and compete with friends in this classic card matching game! 🎯
+### 🃏 ¡Pon a prueba tu memoria y compite con amigos en este clásico juego de parejas! 🎯
 
-**Perfect for:**
-- Memory training and cognitive development
-- Competitive two-player gaming
-- Learning C++ game development
-- Understanding cross-platform programming
-- Console-based UI design study
+**Ideal para:**
+- Entrenamiento de memoria y desarrollo cognitivo
+- Juego competitivo para dos jugadores
+- Aprender desarrollo de juegos en C++
+- Entender la programación multiplataforma
+- Estudio de diseño de interfaces en consola
 
-**Challenge your brain and have fun!** 🧠✨
+**¡Desafía tu mente y diviértete!** 🧠✨
