@@ -305,7 +305,7 @@ La interfaz del juego está actualmente en **español**. Los mensajes de error, 
 ### Requisitos del Sistema
 - **SO**: Windows 10/11, Linux (Ubuntu 18.04+) o macOS 10.14+
 - **RAM**: Mínimo 20 MB
-- **Almacenamiento**: ~3 MB de espacio libre
+- **Almacenamiento**: ~4 MB de espacio libre
 - **Pantalla**: Ventana de terminal/consola
 - **Sin Dependencias**: Todas las bibliotecas están enlazadas estáticamente
 
