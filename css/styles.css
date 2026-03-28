@@ -1,0 +1,766 @@
+/*****************************************************************************************************************************************************************************/
+/*                                                                                                                                                                           */
+/*                                                                  Estilos para el Proyecto LetterCards                                                                        */
+/*                                                                                                                                                                           */
+/*****************************************************************************************************************************************************************************/
+/*                                                                                                                                                                           */
+/* Autor: Magallanes López Carlos Gabriel                                                                                                                                    */
+/* Versión del Proyecto: 1.0                                                                                                                                                 */
+/* Correo: cgmagallanes23@gmail.com                                                                                                                                          */
+/* Ultima Modificación: 28/03/2025                                                                                                                                           */
+/*                                                                                                                                                                           */
+/*****************************************************************************************************************************************************************************/
+
+
+/* Propiedades Custom para HTML */
+:root {
+
+    --red:    #e53935;
+    --pink:   #f06292;
+    --orange: #fb8c00;
+    --yellow: #fdd835;
+    --green:  #43a047;
+    --teal:   #00897b;
+    --blue:   #1e88e5;
+    --purple: #8e24aa;
+    --dark:   #111111;
+    --bg:     #0d0d0d;
+    --card:   #161616;
+    --border: #2a2a2a;
+    --text:   #f0f0f0;
+    --muted:  #888;
+
+}
+
+/* Reset del Selector Global y de sus Pseudo-Elementos */
+*, *::before, *::after{margin: 0; padding: 0; box-sizing: border-box;}
+
+/* Configuración de Scroll Suave para Anclas */
+html{scroll-behavior:smooth;}
+
+/* Aplicamos el Estilo al Cuerpo del Documento */
+body{font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden;}
+
+/* Ancho del Scrrollbar Personalizado para WebKit */
+::-webkit-scrollbar{width: 5px;}
+
+/* Base del Scrollbar: Fondo Oscuro */
+::-webkit-scrollbar-track{background: var(--bg);}
+
+/* Pulgar del Scrollbar: Color Rojo Vibrante */
+::-webkit-scrollbar-thumb{background: var(--red);}
+
+/* Barra de Navegación */
+nav{
+    
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 200;                                                                                                                /* Asegura que esté por encima de otros elementos */
+    background: rgba(13,13,13,.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 2px solid var(--border);
+    padding: 16px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+        
+/* Logo de la Barra de Navegación */
+.nav-logo{
+    
+    font-family: 'Righteous', cursive;
+    font-size: 1.2rem;
+    color: var(--yellow);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+        
+/* Carta del Logo: Cuadro Rojo con Letra Blanca */
+.logo-card{
+    
+    width: 28px;
+    height: 36px;
+    background: var(--red);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 900;
+    color: white;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+
+}
+        
+/* Links de Navegación */
+.nav-links{display: flex; gap: 28px; list-style: none;}
+        
+/* Enlaces de Navegación del Documentoi HTML */ 
+.nav-links a{
+    
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+
+}
+        
+/* Estado Hover para los Enlaces de Navegación: Cambio a Color Claro */
+.nav-links a:hover{color: var(--text);}
+
+/* Sección Hero Principal */
+.hero{
+    
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 72px;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+
+}
+
+/* Contenedor deCartas del Background en la Sección Hero */
+.bg-cards{
+    
+    position: absolute;    
+    inset: 0;                                                                                                                    /* Ocupa todo el Viewport de la Sección Hero */
+    pointer-events: none;                                                                                                        /* Permite Interactuar con Elementos por Encima de las Cartas */                                
+    overflow: hidden;    
+
+}
+
+/* Carta Individual del Background: Cuadro con Letra Blanca y Animación de Movimiento Ascendente */
+.bg-card{
+    
+    position: absolute;
+    width: 72px;
+    height: 90px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Righteous', cursive;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: white;
+    opacity: 0.07;
+    animation: driftCard linear infinite;                                                                                        /* Animación de Movimiento Ascendente con Rotación */
+
+}
+
+/* Animación Keyframes para el Movimiento Ascendente de las Cartas del Background */
+@keyframes driftCard{from {transform: translateY(110vh) rotate(-8deg);} to {transform: translateY(-20vh) rotate(8deg);}}
+
+/* ontenido Interno de la Sección Hero */
+.hero-inner{
+    
+    position: relative;
+    z-index: 2;                                                                                                                  /* Asegura que el Contenido esté por Encima de las Cartas del Background */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 52px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);                                                                                       /* Divide Contenido en Dos Columnas: Texto a la Izquierda y Previsualización a la Derecha */
+    gap: 80px;
+    align-items: center;
+
+}
+
+/* Kicker de la Sección Hero: Texto Pequeño en Mayúsculas con Línea Roja a la Izquierda */
+.hero-kicker{
+    
+    font-size: 0.75rem;                                                                                                          
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+/* Pseudo-Elemento Before para la Línea Roja a la Izquierda del Kicker de la Sección Hero */
+.hero-kicker::before{content: ''; width: 28px; height: 2px; background: var(--red);}
+
+/* Título Principal de la Sección Hero: Fuente Personalizada con Gradiente de Color para la Segunda Línea */
+.hero-title{font-family: 'Righteous', cursive; font-size: clamp(2.8rem,5vw,4.8rem); line-height: 1.05; margin-bottom: 20px;}
+
+/* Primera Línea del Título Principal de la Sección Hero: Color Sólido */
+.hero-title .ht1{display: block; color: var(--text);}
+
+/* Segunda Línea del Título Principal de la Sección Hero: Gradiente de Color con Clipping para el Texto */
+.hero-title .ht2{
+    
+    display: block;
+    background: linear-gradient(90deg,var(--red),var(--orange),var(--yellow));
+    -webkit-background-clip: text;                                                                                               /* Aplica el Clipping del Fondo al Texto */
+    -webkit-text-fill-color: transparent;                                                                                        /* Hace que el Color del Texto sea Transparente */
+    background-clip: text;                                                                                                       /* Compatibilidad para Otros Navegadores que Soporten el Clipping de Fondo en Texto */
+
+}
+
+/* Descripción de la Sección Hero: Texto de Apoyo con Color Atenuado y Mayor Interlineado para Mejor Legibilidad */
+.hero-desc{font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 32px; max-width: 420px; font-weight: 600;}
+
+/* Contenedor de Botones de Llamado a la Acción en Sección Hero: Flexbox para Alinear Horizontalmente con Espacio entre Ellos */
+.hero-btns{display: flex; gap: 14px; flex-wrap: wrap;}
+
+/* Botón */
+.btn{
+    
+    display: inline-flex;                                                                                                        /* Flexbox para Alinear el Contenido del Botón Horizontalmente y Centrado Verticalmente */
+    align-items: center;
+    gap: 8px;
+    padding: 13px 28px;
+    border-radius: 8px;
+    font-weight: 900;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: all 0.25s;                                                                                                       /* Transición Suave para Efectos Hover */
+    cursor: pointer;                                                                                                             /* Cambia el Cursor a un Icono de Mano para Indicar que es Interactivo */
+    border: none;                                                                                                                /* Elimina el Borde Predeterminado para Botones */
+
+}
+
+/* Aplicamos Estilo al Botón Rojo */
+.btn-red{background: var(--red); color: white; box-shadow: 0 4px 20px rgba(229,57,53,.35);}                                  /* Botón Rojo con Sombra para Dar Profundidad */              
+.btn-red:hover{background: #c62828; transform: translateY(-3px); box-shadow: 0 8px 28px rgba(229, 57, 53, 0.5);}             /* Efecto Hover: Cambio a Rojo Oscuro, Elevación con TranslateY y Sombra Más Intensa */
+
+/* Aplicamos Estilo al Botón Ghost */
+.btn-ghost{background: transparent; color: var(--text); border: 2px solid var(--border);}                                        /* Botón Ghost con Fondo Transparente, Texto Claro y Borde Sutil */
+.btn-ghost:hover{border-color: var(--text); transform: translateY(-3px);}                                                        /* Efecto Hover: Cambio del Color del Borde a Claro y Elevación con TranslateY */
+
+/* Contenedor del Grid de Letras en la Sección Hero */
+.hero-grid-wrap{position: relative;}
+
+/* Pestaña de la Cuadrícula */
+.grid-label{
+    
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;                                                                                                   /* Transforma el Texto a Mayúsculas */
+    color: var(--muted);
+    margin-bottom: 14px;
+    text-align: center;
+
+}
+
+/* Cuadrícula de Letras: Grid con 6 Columnas y Espacio entre Celdas */
+.letter-grid{display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;}
+
+/* Celda Individual de la Cuadrícula */
+.lg-cell{
+    
+    aspect-ratio: 1;                                                                                                             /* Proporción de Aspecto Cuadrada para Cada Celda */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Righteous', cursive;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: white;
+    transition: transform 0.3s;                                                                                                  /* Transición Suave para el Efecto Hover que Escala y Rota la Celda */
+
+}
+
+/* Estado Hover para las Celdas de la Cuadrícula: Escala la Celda y Rota Ligeramente para Dar un Efecto Dinámico */
+.lg-cell:hover{transform: scale(1.12) rotate(3deg);}
+
+/* Estilo para Celdas Ocultas en Cuadrícula: Fondo Oscuro, Borde Sutil y Texto Atenuado para Indicar que No Son Interactivas */
+.lg-cell.hidden{background: #1e1e1e; border: 2px solid #2a2a2a; color: var(--border); font-size: 1rem;}
+
+/* Estilos de Celdas Individuales con Colores Vibrantes para Cada Letra, Usando las Propiedades Custom Definidas en :root */
+.lg-cell.c1{background: var(--red);}                                                                                             /* Celda 1 con Fondo Rojo para la Letra 'Z' */
+.lg-cell.c2{background: var(--orange);}                                                                                          /* Celda 2 con Fondo Naranja para la Letra 'H' */
+.lg-cell.c3{background: var(--yellow); color: #111;}                                                                           /* Celda 3 con Fondo Amarillo para la Letra 'Y' y Texto Oscuro para Mejor Contraste */
+.lg-cell.c4{background: var(--green);}                                                                                           /* Celda 4 con Fondo Verde para la Letra 'N' */
+.lg-cell.c5{background: var(--teal);}                                                                                            /* Celda 5 con Fondo Teal para la Letra 'I' */
+.lg-cell.c6{background: var(--blue);}                                                                                            /* Celda 6 con Fondo Azul para la Letra 'R' */
+.lg-cell.c7{background: var(--purple);}                                                                                          /* Celda 7 con Fondo Púrpura para la Letra 'A' */
+.lg-cell.c8{background: var(--pink);}                                                                                            /* Celda 8 con Fondo Rosa para la Letra 'A' */
+
+/* Divisor de Sección: Línea Horizontal con Gradiente que se Desvanece hacia los Lados */
+.divider{height: 2px; background: linear-gradient(90deg, transparent, var(--border), transparent);}
+
+    
+/* Aplicamos Estilo a las Secciones del Documento: Padding Vertical para Separar Visualmente cada Sección */
+section{padding: 90px 0;}
+
+/* Contenedor Principal: Ancho Máximo para Centrar el Contenido y Padding Horizontal */
+.container{max-width: 1100px; margin: 0 auto; padding: 0 52px;}
+
+/* Kicker de Sección: Texto Pequeño en Mayúsculas con Línea Roja a la Izquierda para Introducir Cada Sección */
+.sec-kicker{
+    
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;                                                                                                   /* Transforma el Texto a Mayúsculas */
+    color: var(--red);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+/* Pseudo-Elemento Before para la Línea Roja a la Izquierda del Kicker de Sección */
+.sec-kicker::before{content: ''; width: 20px; height: 2px; background: var(--red);}
+
+/* Título de Sección: Fuente Personalizada con Gradiente de Color para Resaltar la Importancia del Título */
+.sec-title{font-family: 'Righteous', cursive; font-size: clamp(1.8rem,3vw,2.6rem); line-height: 1.2; margin-bottom: 12px;}
+
+/* Segunda Línea del Título de Sección: Gradiente de Color con Clipping para el Texto para Dar un Toque Visual Atractivo */
+.sec-title span{
+    
+    background: linear-gradient(90deg, var(--red), var(--orange));
+    -webkit-background-clip: text;                                                                                               /* Aplica el Clipping del Fondo al Texto */
+    -webkit-text-fill-color: transparent;                                                                                        /* Hace que el Color del Texto sea Transparente */
+    background-clip: text;                                                                                                       /* Compatibilidad para Otros Navegadores que Soporten el Clipping de Fondo en Texto */
+
+}
+
+/* Subtítulo de Sección: Texto de Apoyo con Color Atenuado, Mayor Interlineado para Mejor Legibilidad y Ancho Máximo */
+.sec-sub{font-size: 0.95rem; color: var(--muted); line-height: 1.75; max-width: 540px; font-weight: 600;}
+
+/* Sección de Estadísticas: Fondo Oscuro con Bordes para Resaltar la Importancia de las Estadísticas */
+.stats-section{background: var(--card); border-top: 2px solid var(--border); border-bottom: 2px solid var(--border);}
+
+/* Fila de Estadísticas: Grid con 4 Columnas para Mostrar las Estadísticas de Manera Clara y Organizada */
+.stats-row{
+    
+    display: grid; 
+    grid-template-columns: repeat(4,1fr);                                                                                        /* Divide Contenido en Cuatro Columnas de Igual Ancho */ 
+    gap: 0;
+
+}
+
+/* Elemento Individual de Estadística: Padding para Separar el Contenido, Texto Centrado, Borde a la Derecha */
+.stat-item{
+    
+    padding: 40px 24px; 
+    text-align: center; 
+    border-right: 2px solid var(--border); 
+    transition: background 0.2s;                                                                                                 /* Transición Suave para el Efecto Hover que Cambia el Fondo */
+
+}
+
+/* Ultimo Elemento de Estadística: Elimina el Borde a la Derecha para Evitar Doble Borde en el Lado Derecho del Contenedor */
+.stat-item:last-child{border-right: none;}
+
+/* Estado Hover para los Elementos de Estadística: Cambio de Fondo para Indicar Interactividad y Resaltar la Estadística */
+.stat-item:hover{background: #1c1c1c;}
+
+/* Valor de la Estadística: Fuente Personalizada, Tamaño Grande para Resaltar el Número, Margen Inferior */
+.stat-val{
+    
+    font-family: 'Righteous', cursive; 
+    font-size: 2.4rem; 
+    display: block;                                                                                                              /* Valor Estadística se Muestre en una Nueva Línea */
+    margin-bottom: 8px;
+
+}
+
+/* Clave de la Estadística: Tamaño Más Pequeño, Fuente en Mayúsculas, Color Atenuado  */
+.stat-key{font-size: 0.78rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--muted);}
+
+/* Estilos para los Valores de Estadística con Colores Vibrantes, Usando las Propiedades Custom Definidas en :root */
+.sv1{color: var(--red);} .sv2{color: var(--orange);} .sv3{color: var(--yellow);} .sv4{color: var(--green);}
+
+/* Sección de Features: Fondo Oscuro para Resaltar las Características del Proyecto */
+.features-section{background:var(--bg);}
+
+/* Cuadrícula de Features: Grid con 3 Columnas para Mostrar Características de Manera Clara y Organizada, con Fondo y Bordes */
+.feat-grid{
+    
+    display: grid;
+    grid-template-columns: repeat(3,1fr);                                                                                        /* Divide Contenido en Tres Columnas de Igual Ancho */
+    gap: 2px;
+    background: var(--border);
+    border: 2px solid var(--border);
+    margin-top: 50px;
+
+}
+
+/* Elemento Individual de Feature: Padding para Separar el Contenido, Transición para Efecto Hover, Posición Relativa */
+.feat-item{background: var(--bg); padding: 34px 28px; transition: background 0.25s; position: relative;}
+
+/* Estado Hover para los Elementos de Feature: Cambio de Fondo para Indicar Interactividad y Resaltar la Característica */
+.feat-item:hover{background: var(--card);}
+
+/* Línea de Color en la Parte Superior del Elemento de Feature: Posición Absoluta */
+.feat-stripe{height: 3px; width: 100%; position: absolute; top: 0; left: 0; right: 0;}
+
+/* Estilos para las Líneas de Color en la Parte Superior de los Elementos de Feature*/
+.fs1{background: var(--red);} .fs2{background: var(--orange);} .fs3{background: var(--yellow);}                                  /* Líneas 1, 2 y 3 con Colores Rojo, Naranja y Amarillo */
+.fs4{background: var(--green);} .fs5{background: var(--blue);} .fs6{background: var(--purple);}                                  /* Líneas 4, 5 y 6 con Colores Verde, Azul y Púrpura */
+
+/* Icono de la Característica: Tamaño Grande para Resaltar el Icono, Margen Inferior */
+.feat-icon{
+    
+    font-size: 2rem; 
+    margin-bottom: 16px; 
+    display: block;                                                                                                              /* Icono se Muestre en una Nueva Línea */
+
+}
+
+/* Título de la Característica: Fuente Personalizada, Tamaño para Resaltar el Título, Margen Inferior */
+.feat-title{font-family: 'Righteous', cursive; font-size: 1.1rem; margin-bottom: 10px; color: var(--text);}
+
+/* Descripción de la Característica: Tamaño Más Pequeño, Color Atenuado, Mayor Interlineado y Fuente en Negrita */
+.feat-desc{font-size: 0.88rem; color: var(--muted); line-height: 1.7; font-weight: 600;}
+
+/* Sección de Screenshots: Fondo con Bordes para Resaltar la Importancia de las Capturas de Pantalla */
+.screens-section{background: var(--card); border-top: 2px solid var(--border);}
+
+/* Cuadrícula de Screenshots: Grid con 2 Columnas */
+.screens-grid{
+    
+    display: grid; 
+    grid-template-columns: repeat(2,1fr);                                                                                        /* Divide Contenido en Dos Columnas de Igual Ancho */
+    gap: 24px; 
+    margin-top: 50px;
+
+}
+
+/* Carta de Screenshot */
+.sc-card{
+    
+    background: var(--bg); 
+    border: 2px solid var(--border); 
+    border-radius: 10px; 
+    overflow: hidden; 
+    transition: all 0.3s;                                                                                                        /* Transición Suave que Cambia el Borde, Eleva la Carta y Agrega Sombra */
+
+}
+
+/* Estado Hover para las Cartas de Screenshot: Cambio del Color del Borde a Rojo, Elevación con TranslateY y Sombra */
+.sc-card:hover{border-color: var(--red); transform: translateY(-6px); box-shadow: 0 16px 40px rgba(229, 57, 53, 0.15);}
+
+/* Barra de la Carta de Screenshot: Fondo Oscuro, Padding, Flexbox  y Justificar Espacio entre los Elementos, Borde Inferior */
+.sc-bar{
+    
+    background: #0a0a0a;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;                                                                                              /* Justifica el Espacio entre los Elementos */
+    border-bottom: 2px solid var(--border);
+
+}
+
+/* Contendor de los Puntos de Colores en la Barra de la Carta de Screenshot */
+.sc-dots{display: flex; gap: 7px;}
+
+/* Puntos de Colores en la Barra de la Carta de Screenshot */
+.sc-dot{width: 11px; height: 11px; border-radius: 50%;}
+
+
+/* Colores para los Puntos de la Barra de la Carta de Screenshot: Rojo, Amarillo y Verde */
+.sd1{background: #ff5f57;} .sd2{background: #febc2e;} .sd3{background: #28c840;}
+
+/* Nombre de la Carta de Screenshot: Tamaño Pequeño, Fuente en Negrita, Color Atenuado, Espaciado entre Letras */
+.sc-name{font-size: 0.68rem; font-weight: 800; color: var(--muted); letter-spacing: 1px;}
+
+/* Imagen de la Carta de Screenshot */
+.sc-card img{
+    
+    width: 100%; 
+    display: block;                                                                                                              /* Se Muestre en una Nueva Línea y Ocupe Todo el Ancho del Contenedor */
+
+}
+
+/* Etiqueta de la Carta de Screenshot: Padding, Tamaño Pequeño, Fuente en Negrita, Color Atenuado, Espaciado entre Letras */
+.sc-label{padding: 12px 16px; font-size: 0.8rem; font-weight: 800; color: var(--muted); letter-spacing: 0.5px;}
+
+/* Sección del Tablero de Juego: Fondo Oscuro para Resaltar el Tablero y su Información */
+.board-section{background: var(--bg);}
+
+/* Contenedor del Tablero de Juego */
+.board-wrap{margin-top: 50px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px; align-items: center;}
+
+/* Demostración del Tablero de Juego: Fondo con Bordes y Padding  */
+.board-demo{background: var(--card); border: 2px solid var(--border); border-radius: 12px; padding: 28px;}
+
+/* Título de la Demostración del Tablero de Juego */
+.board-demo-title{
+    
+    font-family: 'Righteous', cursive;
+    font-size: 1rem;
+    color: var(--muted);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;                                                                                                   /* Transforma el Texto a Mayúsculas */
+
+}
+
+/* Cuadrícula del Tablero de Juego: Grid con 6 Columnas */
+.bd-grid{display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px;}
+
+/* Celda Individual del Tablero de Juego */
+.bd-cell{
+    
+    aspect-ratio: 1;                                                                                                             /* Proporción de Aspecto Cuadrada para Cada Celda */
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Righteous',cursive;
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: white;
+    transition: transform 0.2s;                                                                                                  /* Transición Suave para el Efecto Hover que Escala la Celda */
+
+}
+
+/* Estado Hover para las Celdas del Tablero de Juego: Escala la Celda para Dar un Efecto de Interactividad y Resaltar la Celda */
+.bd-cell:hover{transform: scale(1.1);}
+
+/* Estilo para Celdas Vacías del Tablero de Juego: Fondo Oscuro, Borde Sutil y Texto Atenuado */
+.bd-x{background: #1e1e1e; border: 2px solid #2a2a2a; color: #333; font-size: 0.9rem;}
+
+/* Información del Tablero de Juego */
+.board-info{
+
+    display: flex;
+    flex-direction: column;                                                                                                      /* Organiza la Información en una Columna Vertical */
+    gap: 20px;
+
+}
+
+/* Elemento Individual de Información del Tablero de Juego */
+.bi-item{
+    
+    padding: 20px 24px;          
+    background: var(--card);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: border-color 0.2s;                                                                                               /* Transición Suave para el Efecto Hover que Cambia el Color del Borde */
+
+}
+
+/* Estado Hover para los Elementos de Información del Tablero de Juego */
+.bi-item:hover{border-color: var(--red);}
+
+/* Icono de la Información del Tablero de Juego */
+.bi-icon{
+    
+    font-size: 1.8rem;
+    flex-shrink: 0;                                                                                                              /* No se encoja el Icono para Mantener su Tamaño Original */
+
+}
+
+/* Título de la Información del Tablero de Juego: Fuente Personalizada, Tamaño para Resaltar el Título, Margen Inferior */
+.bi-title{font-family: 'Righteous', cursive; font-size: 1rem; margin-bottom: 5px;}
+
+/* Descripción de la Información del Tablero de Juego */
+.bi-desc{font-size: 0.85rem; color: var(--muted); font-weight: 600; line-height: 1.5;}
+
+/* Sección de Errores: Fondo con Bordes para Resaltar la Importancia de los Errores */
+.errors-section{background: var(--card); border-top: 2px solid var(--border);}
+
+/* Cuadrícula de Errores: Grid con 2 Columnas para Mostrar los Errores de Manera Clara y Organizada, con Fondo y Bordes */
+.err-grid{
+    
+    display: grid;
+    grid-template-columns: repeat(2,1fr);                                                                                        /* Divide Contenido en Dos Columnas de Igual Ancho */
+    gap: 2px;
+    background: var(--border);
+    border: 2px solid var(--border);
+    margin-top: 50px;
+
+}
+
+/* Elemento Individual de Error: Padding para Separar el Contenido, Transición para Efecto Hover, Posición Relativa */
+.err-item{
+    
+    background: var(--bg);
+    padding: 24px;
+    transition: background 0.2s;                                                                                                 /* Transición Suave para el Efecto Hover que Cambia el Fondo */
+
+}
+
+/* Estado Hover para los Elementos de Error: Cambio de Fondo para Indicar Interactividad y Resaltar el Error */
+.err-item:hover{background: #111;}
+
+/* Insignia de Error: Etiqueta Pequeña con Fondo de Color para Indicar el Tipo de Error, Fuente en Mayúsculas y Negrita */
+.err-badge{
+    
+    display: inline-block;                                                                                                       /* Muestra la Insignia como un Elemento en Línea pero Permite Padding y Margen */
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;                                                                                                   /* Transforma el Texto a Mayúsculas */
+    padding: 4px 10px; 
+    border-radius: 4px;
+    margin-bottom: 12px;
+
+}
+
+/* Estilos para las Insignias de Error con Colores Vibrantes, Usando las Propiedades Custom Definidas en :root */
+.eb-range{background: rgba(229, 57, 53, 0.15); color: var(--red);}                                                             /* Rango de Error: Fondo Rojo Translúcido y Texto Rojo */
+.eb-type {background: rgba(251, 140, 0, 0.15); color: var(--orange);}                                                          /* Tipo de Error: Fondo Naranja Translúcido y Texto Naranja */
+.eb-card {background: rgba(67, 160, 71, 0.15); color: var(--green);}                                                           /* Error de Carta: Fondo Verde Translúcido y Texto Verde */
+.eb-dup  {background: rgba(30, 136, 229, 0.15); color: var(--blue);}                                                           /* Error de Duplicado: Fondo Azul Translúcido y Texto Azul */
+
+/* Título del Error: Fuente Personalizada, Tamaño para Resaltar el Título, Margen Inferior */
+.err-title{font-family: 'Righteous', cursive; font-size: 1rem; margin-bottom: 8px;}
+
+/* Mensaje del Error */
+.err-msg{
+    
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 700;
+    font-family: monospace;                                                                                                      /* Fuente Monoespaciada para el Mensaje de Error */
+    background: #0a0a0a;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border-left: 3px solid var(--border);
+
+}
+
+/* Sección de Descarga: Fondo Oscuro con Texto Centrado para Resaltar la Llamada a la Acción de Descargar el Proyecto */
+.dl-section{background: var(--bg); text-align: center; padding: 100px 52px; position: relative; overflow: hidden;}
+
+/* Texto de Fondo en la Sección de Descarga */
+.dl-bg-text{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);                                                                                             /* Centra el Texto de Fondo Exactamente en el Centro de la Sección */
+    font-family: 'Righteous',cursive;
+    font-size: 22vw;
+    color: #111;
+    pointer-events: none;                                                                                                        /* Permite Interactuar con Elementos por Encima del Texto de Fondo */
+    white-space: nowrap;                                                                                                         /* Evita que el Texto se Rompa en Varias Líneas, Manteniéndolo en Sola Línea Horizontal */
+    letter-spacing: -4px;
+    line-height: 1;
+
+}
+
+/* Contenido Interno de la Sección de Descarga: Posición Relativa para Estar por Encima del Texto de Fondo */
+.dl-inner{
+    
+    position: relative; 
+    z-index: 2;                                                                                                                  /* Asegura que el Contenido Interno esté por Encima del Texto de Fondo */
+
+}
+
+/* Sección de Descarga y Título de la Sección: Texto Centrado para Resaltar la Llamada a la Acción */
+.dl-section .sec-title{text-align: center;}
+
+/*  Descripción de la Sección de Descarga */
+.dl-section p{
+    
+    font-size: 0.95rem; 
+    color: var(--muted); 
+    max-width: 460px; 
+    margin: 0 auto 36px; 
+    line-height: 1.8; 
+    font-weight: 600;
+
+}
+
+/* Botón de Descarga */
+.dl-btn{
+    
+    display: inline-flex;                                                                                                        /* Flexbox para Alinear el Contenido del Botón Horizontalmente y Centrado Verticalmente */
+    align-items: center;
+    gap: 12px;
+    padding: 18px 48px;
+    background: var(--red);
+    color: white;
+    font-family: 'Righteous',cursive;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s;                                                                                                        /* Transición Suave para Efectos Hover */
+    box-shadow: 0 6px 28px rgba(229,57,53,.35);
+
+}
+
+/* Estado Hover para el Botón de Descarga */
+.dl-btn:hover{transform: translateY(-4px); box-shadow: 0 12px 40px rgba(229, 57, 53, 0.5); background: #c62828;}
+
+/* Fila de Requisitos */
+.req-row{display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 24px;}
+
+/* Etiqueta de Requisito */
+.req-tag{
+    
+    font-size: 0.75rem; 
+    font-weight: 800; 
+    color: var(--muted); 
+    border: 2px solid var(--border); 
+    padding: 6px 14px; 
+    border-radius: 6px;
+    background: var(--card);
+
+}
+
+/* Pie de Página */
+footer{
+    
+    background: var(--card);
+    border-top: 2px solid var(--border);
+    padding: 26px 52px;
+    display: flex;
+    justify-content: space-between;                                                                                              /* Justifica el Espacio entre los Elementos del Pie de Página */
+    align-items: center;
+
+}
+
+/* Aplicamos Estilo a Lado Izquierdo del Pie de Página */
+.f-left{font-size: 0.82rem; font-weight: 700; color: var(--muted);}                                                              /* Lado Izquierdo del Pie de Página con Texto Atenuado */
+.f-left strong{color: var(--text);}                                                                                              /* Negrita en el Lado Izquierdo del Pie de Página con Color Claro para Resaltar */
+
+/* Aplicamos Estilo a Lado Derecho del Pie de Página */
+.f-right{display: flex; gap: 20px;}                                                                                              /* Lado Derecho del Pie de Página con Flexbox */
+.f-right a{font-size: 0.8rem; font-weight: 700; color: var(--muted); text-decoration: none; transition: color 0.2s;}             /* Enlaces del Lado Derecho con Texto Atenuado y Transición */
+.f-right a:hover{color: var(--text);}                                                                                            /* Efecto Hover para los Enlaces del Lado Derecho del Pie de Página: Cambio a Color Claro */
+
+/* Elementos con Animación de Fade-In */
+.fade-in{
+    
+    opacity: 0; 
+    transform: translateY(20px);                                                                                                 /* Elementos Están Desplazados Hacia Abajo y con Opacidad Cero para Crear el Efecto de Fade-In al Aparecer en Pantalla */
+    transition: opacity 0.65s ease, transform 0.65s ease;
+
+}
+.fade-in.visible{opacity: 1; transform: translateY(0);}                                                                          /* Cuando se Agrega la Clase 'visible', Posición Original y totalmente Opacos */
+
+/* Responsive Design para Pantallas Menores a 960px: Ajustes para Mejorar la Usabilidad en Dispositivos Móviles */
+@media(max-width:960px){
+
+    nav{padding: 14px 20px;}                                                                                                     /* Barra de Navegación: Menos Padding */
+    .nav-links{display: none;}                                                                                                   /* Enlaces de Navegación: Se ocultan */
+    .container{padding: 0 20px;}                                                                                                 /* Contenedor Principal: Menos Padding Horizontal */
+    .hero-inner{grid-template-columns: 1fr; gap: 40px;}                                                                          /* Sección Hero: Contenido en una Sola Columna con Menos Espacio entre Elementos */
+    .board-wrap{grid-template-columns: 1fr;}                                                                                     /* Sección del Tablero de Juego: Contenido en una Sola Columna */
+    .feat-grid{grid-template-columns: 1fr;}                                                                                      /* Sección de Features: Contenido en una Sola Columna */
+    .screens-grid{grid-template-columns: 1fr;}                                                                                   /* Sección de Screenshots: Contenido en una Sola Columna */
+    .stats-row{grid-template-columns: repeat(2, 1fr);}                                                                           /* Sección de Estadísticas: Dos Columnas en Lugar de Cuatro para Mejor Legibilidad */
+    .err-grid{grid-template-columns: 1fr;}                                                                                       /* Sección de Errores: Contenido en una Sola Columna */
+    footer{flex-direction: column; gap: 14px; text-align: center;}                                                               /* Pie de Página: Elementos en Columna, Centrado y con Menos Espacio entre Ellos */
+    .dl-section{padding: 80px 20px;}                                                                                             /* Sección de Descarga: Menos Padding para Mejor Ajuste en Pantallas Pequeñas */
+
+}
+
+/*****************************************************************************************************************************************************************************/

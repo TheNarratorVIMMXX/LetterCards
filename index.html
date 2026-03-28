@@ -1,0 +1,360 @@
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- DOCUMENTACIÓN -->
+<!-- Vista para el Proyecto LetterCards -->
+<!-- Ultima Modificación: 28/03/2025 -->
+<!-- Autor: Magallanes López Carlos Gabriel -->
+<!-- Correo: cgmagallanes23@gmail.com -->
+<!-- Versión: 1.0 -->
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!-- Vista del Proyecto LetterCards -->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memorama de Letras</title>
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">                      <!-- Fuente de Texto -->
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+
+        <!-- Barra de Navegación -->
+        <nav>
+            <a href="#" class="nav-logo">                                                                                                                      <!-- Logo de Navegación, te lleva al Inicio-->
+                <div class="logo-card">M </div> 
+                Memorama Letras 
+            </a>
+
+            <!-- Enlaces de Navegación -->
+            <ul class="nav-links">
+                <li><a href="#caracteristicas">Features</a></li>
+                <li><a href="#capturas">Capturas</a></li>
+                <li><a href="#tablero">Tablero</a></li>
+                <li><a href="#descargar">Descargar</a></li>
+            </ul>
+        
+        </nav>
+
+        <!-- Cartas de Fondo -->
+        <div class="bg-cards">
+            <div class="bg-card" style="left:5%;animation-duration:18s;animation-delay:0s;background:#e53935;">A</div>
+            <div class="bg-card" style="left:20%;animation-duration:24s;animation-delay:-6s;background:#fb8c00;">B</div>
+            <div class="bg-card" style="left:38%;animation-duration:20s;animation-delay:-12s;background:#fdd835;color:#111;">C</div>
+            <div class="bg-card" style="left:55%;animation-duration:22s;animation-delay:-3s;background:#43a047;">D</div>
+            <div class="bg-card" style="left:72%;animation-duration:19s;animation-delay:-8s;background:#1e88e5;">E</div>
+            <div class="bg-card" style="left:88%;animation-duration:26s;animation-delay:-15s;background:#8e24aa;">F</div>
+        </div>
+
+        <!-- Sección Hero -->
+        <section class="hero">
+
+            <!-- Contenido Interno del Hero -->
+            <div class="hero-inner">
+                <div>
+                    <p class="hero-kicker">C++ · Consola · Multiplataforma</p>
+                    <h1 class="hero-title"><span class="ht1">Memorama</span><span class="ht2">de Letras</span></h1>
+                    <p class="hero-desc">
+                        Juego clásico de parejas para dos jugadores en consola. Cuadrícula 6×6, 18 parejas únicas, cronómetro y estadísticas.
+                    </p>
+
+                    <!-- Botones de Acción del Hero -->
+                    <div class="hero-btns">
+                        <a href="#descargar" class="btn btn-red">⬇ Descargar .exe</a>
+                        <a href="#capturas" class="btn btn-ghost">Ver Capturas</a>
+                    </div>
+
+                </div>
+                
+                <!-- Cuadrícula del Tablero -->
+                <div class="hero-grid-wrap">
+                    <p class="grid-label">Tablero 6 × 6</p>
+                    <div class="letter-grid">
+                        <div class="lg-cell c1">A</div><div class="lg-cell hidden">X</div><div class="lg-cell c3">C</div><div class="lg-cell hidden">X</div>
+                        <div class="lg-cell c5">E</div><div class="lg-cell hidden">X</div>
+                        <div class="lg-cell hidden">X</div><div class="lg-cell c2">B</div><div class="lg-cell hidden">X</div><div class="lg-cell c4">D</div>
+                        <div class="lg-cell hidden">X</div><div class="lg-cell c6">F</div>
+                        <div class="lg-cell c7">G</div><div class="lg-cell hidden">X</div><div class="lg-cell c1">A</div><div class="lg-cell hidden">X</div>
+                        <div class="lg-cell c8">H</div><div class="lg-cell hidden">X</div>
+                        <div class="lg-cell hidden">X</div><div class="lg-cell c3">C</div><div class="lg-cell hidden">X</div><div class="lg-cell c7">G</div>
+                        <div class="lg-cell hidden">X</div><div class="lg-cell c2">B</div>
+                        <div class="lg-cell c4">D</div><div class="lg-cell hidden">X</div><div class="lg-cell c6">F</div><div class="lg-cell hidden">X</div>
+                        <div class="lg-cell c5">E</div><div class="lg-cell hidden">X</div>
+                        <div class="lg-cell hidden">X</div><div class="lg-cell c8">H</div><div class="lg-cell hidden">X</div>
+                        <div class="lg-cell hidden">X</div><div class="lg-cell hidden">X</div><div class="lg-cell hidden">X</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Sección de Estadísticas -->
+        <section class="stats-section">
+            <div class="container">
+
+                <!-- Fila de Estadísticas con Fade-In: Cuenta con Elemento, Valor y Clave-->
+                <div class="stats-row fade-in">
+                    <div class="stat-item">
+                        <span class="stat-val sv1">6×6</span>
+                        <span class="stat-key">Cuadrícula</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-val sv2">18</span>
+                        <span class="stat-key">Parejas A–R</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-val sv3">2</span>
+                        <span class="stat-key">Jugadores</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-val sv4">3</span>
+                        <span class="stat-key">Plataformas</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- División de Sección -->
+        <div class="divider"></div>
+
+        <!-- Sección de Características -->
+        <section class="features-section" id="caracteristicas">
+            <div class="container">
+                <div class="fade-in">
+                    <p class="sec-kicker">Funcionalidades</p>
+                    <h2 class="sec-title">¿Qué incluye <span>el juego</span>?</h2>
+                </div>
+
+                <!-- Cuadrícula de Características: Elemento, Stripe, Icono, Título y Descripción -->
+                <div class="feat-grid fade-in">
+                    <div class="feat-item">
+                        <div class="feat-stripe fs1"></div>
+                        <span class="feat-icon">🃏</span>
+                        <p class="feat-title">Modo 2 Jugadores</p>
+                        <p class="feat-desc">Turnos alternados. Quien encuentra la pareja continúa jugando. Puntuación individual en tiempo real.</p>
+                    </div>
+                    <div class="feat-item">
+                        <div class="feat-stripe fs2"></div>
+                        <span class="feat-icon">🔀</span>
+                        <p class="feat-title">Mezcla Aleatoria</p>
+                        <p class="feat-desc">Algoritmo Fisher-Yates garantiza distribución justa de las 36 cartas en cada nueva partida.</p>
+                    </div>
+                    <div class="feat-item">
+                        <div class="feat-stripe fs3"></div>
+                        <span class="feat-icon">⏱️</span>
+                        <p class="feat-title">Cronómetro</p>
+                        <p class="feat-desc">Tiempo total registrado con std::chrono. Se muestra en minutos y segundos al terminar la partida.</p>
+                    </div>
+                    <div class="feat-item">
+                        <div class="feat-stripe fs4"></div>
+                        <span class="feat-icon">✅</span>
+                        <p class="feat-title">Validación Robusta</p>
+                        <p class="feat-desc">4 capas: tipo de dato, rango 0-5, carta ya revelada, selección duplicada. Limpieza automática de buffer.</p>
+                    </div>
+                    <div class="feat-item">
+                        <div class="feat-stripe fs5"></div>
+                        <span class="feat-icon">🖥️</span>
+                        <p class="feat-title">Multiplataforma</p>
+                        <p class="feat-desc">Windows (SetConsoleTextAttribute), Linux y macOS (ANSI escape). Compilación condicional #ifdef _WIN32.</p>
+                    </div>
+                    <div class="feat-item">
+                        <div class="feat-stripe fs6"></div>
+                        <span class="feat-icon">📊</span>
+                        <p class="feat-title">Estadísticas Finales</p>
+                        <p class="feat-desc">Puntos por jugador, movimientos totales, errores acumulados y tiempo de partida al finalizar.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- División de Sección -->
+        <div class="divider"></div>
+
+        <!-- Sección de Capturas de Pantalla -->
+        <section class="screens-section" id="capturas">
+            <div class="container">
+                <div class="fade-in">
+                    <p class="sec-kicker">Capturas de Pantalla</p>
+                    <h2 class="sec-title">El juego en <span>acción</span></h2>
+                </div>
+
+                <!-- Cuadrícula de Capturas de Pantalla: Carta, Barra, Puntos, Nombre, Imagen y Etiqueta -->
+                <div class="screens-grid fade-in">
+                    <div class="sc-card">
+                        <div class="sc-bar">
+                            <div class="sc-dots"><div class="sc-dot sd1"></div><div class="sc-dot sd2"></div><div class="sc-dot sd3"></div></div>
+                            <span class="sc-name">Partida en curso</span>
+                        </div>
+                        <img src="imgs/game.png" alt="Juego en curso">
+                        <div class="sc-label">🃏 Tablero 6×6 — Turno del jugador</div>
+                    </div>
+                    <div class="sc-card">
+                        <div class="sc-bar">
+                            <div class="sc-dots"><div class="sc-dot sd1"></div><div class="sc-dot sd2"></div><div class="sc-dot sd3"></div></div>
+                            <span class="sc-name">Ingreso de nombres</span>
+                        </div>
+                        <img src="imgs/start.png" alt="Ingreso de nombres">
+                        <div class="sc-label">👥 Pantalla de bienvenida — Ambos jugadores</div>
+                    </div>
+                    <div class="sc-card">
+                        <div class="sc-bar">
+                            <div class="sc-dots"><div class="sc-dot sd1"></div><div class="sc-dot sd2"></div><div class="sc-dot sd3"></div></div>
+                            <span class="sc-name">Pantalla de victoria</span>
+                        </div>
+                        <img src="imgs/end.png" alt="Pantalla de victoria">
+                        <div class="sc-label">🏆 ¡Ganador! — Arte ASCII de celebración</div>
+                    </div>
+                    <div class="sc-card">
+                        <div class="sc-bar">
+                            <div class="sc-dots"><div class="sc-dot sd1"></div><div class="sc-dot sd2"></div><div class="sc-dot sd3"></div></div>
+                            <span class="sc-name">Estadísticas finales</span>
+                        </div>
+                        <img src="imgs/statistics.png" alt="Estadísticas">
+                        <div class="sc-label">📊 Resultados — Puntos · Movimientos · Tiempo</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Sección del Tablero -->
+        <section class="board-section" id="tablero">
+            <div class="container">
+                <div class="fade-in">
+                    <p class="sec-kicker">Diseño del Tablero</p>
+                    <h2 class="sec-title">Cuadrícula <span>6 × 6</span></h2>
+                </div>
+                
+                <!-- Tablero de Juego: Cuadrícula con Demo, Título y Cuadrícula para Tablero-->
+                <div class="board-wrap fade-in">
+                    <div class="board-demo">
+                        <p class="board-demo-title">Estado durante la partida</p>
+                        <div class="bd-grid">
+                            <div class="bd-cell" style="background:#e53935;">A</div><div class="bd-cell bd-x">X</div>
+                            <div class="bd-cell" style="background:#fb8c00;">B</div><div class="bd-cell bd-x">X</div>
+                            <div class="bd-cell" style="background:#fdd835;color:#111;">C</div><div class="bd-cell bd-x">X</div>
+                            <div class="bd-cell bd-x">X</div><div class="bd-cell" style="background:#43a047;">D</div><div class="bd-cell bd-x">X</div>
+                            <div class="bd-cell" style="background:#43a047;">D</div><div class="bd-cell bd-x">X</div>
+                            <div class="bd-cell" style="background:#1e88e5;">E</div>
+                            <div class="bd-cell" style="background:#00897b;">F</div><div class="bd-cell bd-x">X</div><div class="bd-cell bd-x">X</div>
+                            <div class="bd-cell bd-x">X</div><div class="bd-cell" style="background:#e53935;">A</div><div class="bd-cell bd-x">X</div>
+                            <div class="bd-cell bd-x">X</div><div class="bd-cell bd-x">X</div><div class="bd-cell" style="background:#8e24aa;">G</div>
+                            <div class="bd-cell bd-x">X</div><div class="bd-cell bd-x">X</div><div class="bd-cell" style="background:#f06292;">H</div>
+                            <div class="bd-cell bd-x">X</div><div class="bd-cell" style="background:#fb8c00;">B</div><div class="bd-cell bd-x">X</div>
+                            <div class="bd-cell bd-x">X</div><div class="bd-cell bd-x">X</div><div class="bd-cell bd-x">X</div>
+                            <div class="bd-cell bd-x">X</div><div class="bd-cell bd-x">X</div><div class="bd-cell bd-x">X</div>
+                            <div class="bd-cell bd-x">X</div><div class="bd-cell bd-x">X</div><div class="bd-cell bd-x">X</div>
+                        </div>
+                    </div>
+
+                    <!-- Información del Tablero: Elemento, Icono, Título y Descripción -->
+                    <div class="board-info">
+                        <div class="bi-item">
+                            <span class="bi-icon">📍</span>
+                            <div>
+                                <p class="bi-title">Coordenadas fila-columna</p>
+                                <p class="bi-desc">El jugador ingresa fila (0-5) y columna (0-5) para seleccionar una carta. Las cartas ocultas se muestran como X.</p>
+                            </div>
+                        </div>
+                        <div class="bi-item">
+                            <span class="bi-icon">🔤</span>
+                            <div>
+                                <p class="bi-title">18 parejas A-R</p>
+                                <p class="bi-desc">36 cartas en total, dos de cada letra. Se mezclan antes de cada partida para garantizar aleatoriedad.</p>
+                            </div>
+                        </div>
+                        <div class="bi-item">
+                            <span class="bi-icon">🎯</span>
+                            <div>
+                                <p class="bi-title">Turno contínuo</p>
+                                <p class="bi-desc">Encontrar una pareja mantiene tu turno activo. Solo cambias cuando fallas, incentivando concentración y memoria.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Manejo de Errores -->
+        <section class="errors-section">
+            <div class="container">
+                <div class="fade-in">
+                    <p class="sec-kicker">Validación de Entrada</p>
+                    <h2 class="sec-title">Manejo de <span>Errores</span></h2>
+                </div>
+
+                <!-- Cuadrícula de Errores: Elemento, Insignia, Título y Mensaje -->
+                <div class="err-grid fade-in">
+                    <div class="err-item">
+                        <span class="err-badge eb-range">RANGO</span>
+                        <p class="err-title">Fuera de Rango</p>
+                        <p class="err-msg">"Fuera de Rango (Numeros de 0-5)"</p>
+                    </div>
+                    <div class="err-item">
+                        <span class="err-badge eb-type">TIPO</span>
+                        <p class="err-title">Entrada no entera</p>
+                        <p class="err-msg">"Entrada Invalida. Ingresa un Numero"</p>
+                    </div>
+                    <div class="err-item">
+                        <span class="err-badge eb-card">CARTA</span>
+                        <p class="err-title">Ya descubierta</p>
+                        <p class="err-msg">"Esa Carta ya fue descubierta"</p>
+                    </div>
+                    <div class="err-item">
+                        <span class="err-badge eb-dup">DUPLICADO</span>
+                        <p class="err-title">Misma carta</p>
+                        <p class="err-msg">"Ya elegiste esa Carta como Primera"</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Divisor de Sección -->
+        <div class="divider"></div>
+
+        <!-- Sección de Descarga -->
+        <section class="dl-section" id="descargar">
+            <div class="dl-bg-text">M</div>
+
+            <!-- Contenido Interno de la Sección de Descarga -->
+            <div class="dl-inner">
+                <p class="sec-kicker" style="justify-content:center;margin-bottom:16px;">Distribución</p>
+                <h2 class="sec-title" style="text-align:center;margin-bottom:14px;">Descargar <span>LetterCards</span></h2>
+                <p>Sin instalar compilador ni dependencias. Ejecutable listo para Windows, Linux y macOS.</p>
+                <a href="https://github.com/TheNarratorVIMMXX/LetterCards/releases/latest" class="dl-btn" target="_blank">⬇ LetterCards.exe</a>
+                
+                <!-- Fila de Requerimientos -->
+                <div class="req-row">
+                    <span class="req-tag">🪟 Windows 10/11</span>
+                    <span class="req-tag">🐧 Linux Ubuntu 18+</span>
+                    <span class="req-tag">🍎 macOS 10.14+</span>
+                    <span class="req-tag">💾 ~4 MB</span>
+                    <span class="req-tag">⚡ Sin instalación</span>
+                </div>
+            
+            </div>
+        </section>
+
+        <!-- Pie de Página -->
+        <footer>
+            <div class="f-left"><strong>Memorama de Letras</strong> · © 2025 Carlos Gabriel Magallanes López</div>
+            <div class="f-right">
+                <a href="https://github.com/TheNarratorVIMMXX" target="_blank">GitHub</a>
+                <a href="https://mail.google.com/mail/u/0/?fs=1&to=cgmagallanes23@gmail.com" target="_blank">Contacto</a>
+            </div>
+        </footer>
+
+        <!-- Script -->
+        <script src="js/script.js"></script>
+        
+    </body>
+</html>
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
