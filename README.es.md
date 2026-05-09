@@ -17,7 +17,7 @@ Un juego de memoria por consola desarrollado en C++ con soporte multiplataforma.
 ## 🎬 Vista Previa
 
 <div align="center">
-  <img src="assets/preview.gif" alt="Memorama de Letras Vista Previa"/>
+  <img src="assets/gifs/preview.gif" alt="Memorama de Letras Vista Previa"/>
 </div>
 
 ---
