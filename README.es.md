@@ -27,7 +27,6 @@ Un juego de memoria por consola desarrollado en C++ con soporte multiplataforma.
 - **Desarrollador:** Magallanes López Carlos Gabriel
 - **Correo electrónico:** cgmagallanes23@gmail.com
 - **Fecha de Desarrollo:** 7 de junio de 2025
-- **Escuela:** Centro de Bachillerato Tecnológico Industrial y de Servicios No. 128
 
 ---
 
@@ -365,7 +364,6 @@ La interfaz del juego está actualmente en **español**. Los mensajes de error, 
 
 - **Desarrollador:** Carlos Gabriel Magallanes López
 - **Correo electrónico:** cgmagallanes23@gmail.com
-- **Escuela:** Centro de Bachillerato Tecnológico Industrial y de Servicios No. 128
 
 ¿Encontraste un error? ¿Tienes sugerencias? ¿Quieres reportar tu puntuación más alta? ¡No dudes en escribir!
 
