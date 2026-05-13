@@ -197,18 +197,18 @@ function detectLanguage() {
 
 // Aplicar Traducciones al DOM
 function applyLanguage(lang) {
-    const t = translations[lang];
-    document.querySelectorAll('[data-i18n]').forEach(el => {                                     // Traducir Elementos con Texto Simple
-        const key = el.getAttribute('data-i18n');
-        if (t[key]) el.textContent = t[key];
+    const translation = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(element => {                                     // Traducir Elementos con Texto Simple
+        const key = element.getAttribute('data-i18n');
+        if (translation[key]) element.innerHTML = translation[key];
     });
-    document.querySelectorAll('[data-i18n-html]').forEach(el => {                                // Traducir Elementos con HTML Interno (spans de color)
-        const key = el.getAttribute('data-i18n-html');
-        if (t[key]) el.innerHTML = t[key];
+    document.querySelectorAll('[data-i18n-html]').forEach(element => {                                // Traducir Elementos con HTML Interno (spans de color)
+        const key = element.getAttribute('data-i18n-html');
+        if (translation[key]) element.innerHTML = translation[key];
     });
     document.documentElement.setAttribute('lang', lang);                                         // Actualizar Atributo lang del HTML para Accesibilidad
     const btn = document.getElementById('langToggleBtn');
-    if (btn) btn.textContent = t.langBtn;
+    if (btn) btn.textContent = translation.langBtn;
     localStorage.setItem('lang', lang);                                                          // Guardar Idioma Seleccionado en localStorage
 }
 
