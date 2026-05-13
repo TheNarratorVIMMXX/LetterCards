@@ -7,7 +7,7 @@
 /* Autor: Magallanes López Carlos Gabriel                                                                                                                                    */
 /* Versión del Proyecto: 1.0                                                                                                                                                 */
 /* Correo: cgmagallanes23@gmail.com                                                                                                                                          */
-/* Ultima Modificación: 28/03/2025                                                                                                                                           */
+/* Ultima Modificación: 12/05/2026                                                                                                                                           */
 /*                                                                                                                                                                           */
 /*****************************************************************************************************************************************************************************/
 
@@ -746,6 +746,30 @@ footer{
 }
 .fade-in.visible{opacity: 1; transform: translateY(0);}                                                                          /* Cuando se Agrega la Clase 'visible', Posición Original y totalmente Opacos */
 
+/* Botón Flotante de Cambio de Idioma */
+#langToggleBtn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    background: var(--red);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font-family: 'Righteous', cursive;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(229, 57, 53, 0.4);
+    transition: all 0.3s;
+}
+
+#langToggleBtn:hover {
+    background: #c62828;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(229, 57, 53, 0.55);
+}
+
 /* Responsive Design para Pantallas Menores a 960px: Ajustes para Mejorar la Usabilidad en Dispositivos Móviles */
 @media(max-width:960px){
 
@@ -760,7 +784,13 @@ footer{
     .err-grid{grid-template-columns: 1fr;}                                                                                       /* Sección de Errores: Contenido en una Sola Columna */
     footer{flex-direction: column; gap: 14px; text-align: center;}                                                               /* Pie de Página: Elementos en Columna, Centrado y con Menos Espacio entre Ellos */
     .dl-section{padding: 80px 20px;}                                                                                             /* Sección de Descarga: Menos Padding para Mejor Ajuste en Pantallas Pequeñas */
-
+    #langToggleBtn {
+        bottom: 16px;
+        right: 16px;
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+    
 }
 
 /*****************************************************************************************************************************************************************************/
