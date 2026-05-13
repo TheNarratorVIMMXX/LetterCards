@@ -27,7 +27,6 @@ A console-based memory game developed in C++ with multiplatform support. This cl
 - **Developer:** Carlos Gabriel Magallanes López
 - **Email:** cgmagallanes23@gmail.com
 - **Development Date:** June 7, 2025
-- **School:** Centro de Bachillerato Tecnológico Industrial y de Servicios No. 128
 
 ---
 
@@ -365,7 +364,6 @@ The game interface is currently in **Spanish**. Error messages, prompts, and vic
 
 - **Developer:** Carlos Gabriel Magallanes López
 - **Email:** cgmagallanes23@gmail.com
-- **School:** Centro de Bachillerato Tecnológico Industrial y de Servicios No. 128
 
 Found a bug? Have suggestions? Want to report your high score? Feel free to reach out!
 
