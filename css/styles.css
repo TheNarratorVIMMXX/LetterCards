@@ -320,7 +320,7 @@ section{padding: 90px 0;}
 .sec-kicker::before{content: ''; width: 20px; height: 2px; background: var(--red);}
 
 /* Título de Sección: Fuente Personalizada con Gradiente de Color para Resaltar la Importancia del Título */
-.sec-title{font-family: 'Righteous', cursive; font-size: clamp(1.8rem,3vw,2.6rem); line-height: 1.2; margin-bottom: 12px;}
+.sec-title{font-family: 'Righteous', cursive; font-size: clamp(1.8rem,3vw,2.6rem); line-height: 1.2; margin-bottom: 12px; color: var(--red);}
 
 /* Segunda Línea del Título de Sección: Gradiente de Color con Clipping para el Texto para Dar un Toque Visual Atractivo */
 .sec-title span{
